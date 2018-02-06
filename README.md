@@ -2,7 +2,7 @@
 Crea el apidoc de las rutas de un servicio web según el formato que establece ApidocJS.
 
 # Características
-- Utiliza objetos con attributos Sequelize para indicar los datos de entrada (INPUT) y los datos de salida (OUTPUT).
+- Utiliza objetos con atributos Sequelize para indicar los datos de entrada (INPUT) y los datos de salida (OUTPUT).
 - Crear la documentación de los modelos de la base de datos en formato MD (MarkDown).
 
 # Ejemplo 1. Modelos
