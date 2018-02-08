@@ -1,5 +1,4 @@
 /* global describe it expect */
-const _ = require('lodash')
 const Apidoc = require('../../lib/class/Apidoc')
 const Sequelize = require('sequelize')
 const express = require('express')
@@ -17,18 +16,18 @@ const PARAMS = {
 }
 
 describe('\n - Clase: Apidoc\n', () => {
-  let sequelize
+  let LIBRO
   describe(` Método: model`, () => {
     it('Ejecución con parámetros', () => {
-      sequelize = new Sequelize(null, null, null, PARAMS)
-      sequelize.models.libro = sequelize.define('libro', {
+      const sequelize = new Sequelize(null, null, null, PARAMS)
+      LIBRO = sequelize.define('libro', {
         id: { type: Sequelize.INTEGER(), comment: 'ID del libro.', primaryKey: true },
         titulo: { type: Sequelize.STRING(), comment: 'Título del libro.', example: 'El gato negro' },
         precio: { type: Sequelize.FLOAT(), comment: 'Precio del libro. [Bs]' }
       }, {
         comment: 'Representa a una obra literaria.'
       })
-      const markdown = Apidoc.model(sequelize.models.libro)
+      const markdown = Apidoc.model(LIBRO)
       expect(markdown).to.be.an('string')
       console.log(markdown)
     })
@@ -45,27 +44,24 @@ describe('\n - Clase: Apidoc\n', () => {
       }
       const router = Apidoc.router(onCreate)
 
-      const INPUT = {
-        body: {
-          titulo: Object.assign(_.clone(sequelize.models.libro.attributes.titulo), { allowNull: false }),
-          precio: Object.assign(_.clone(sequelize.models.libro.attributes.precio), { allowNull: false })
-        }
-      }
-      const OUTPUT = {
-        id: Object.assign(_.clone(sequelize.models.libro.attributes.id)),
-        titulo: Object.assign(_.clone(sequelize.models.libro.attributes.titulo)),
-        precio: Object.assign(_.clone(sequelize.models.libro.attributes.precio))
-      }
-      function controller (req, res, next) {
-        res.status(200).json({ msg: 'OK' })
-      }
       router.POST('/libros', {
         description: 'Crea un libro.',
         name: 'crearLibro',
         group: 'Libro',
-        input: INPUT,
-        output: OUTPUT,
-        controller
+        input: {
+          body: {
+            titulo: LIBRO.attributes.titulo,
+            precio: LIBRO.attributes.precio
+          }
+        },
+        output: {
+          id: LIBRO.attributes.id,
+          titulo: LIBRO.attributes.titulo,
+          precio: LIBRO.attributes.precio
+        },
+        controller: (req, res, next) => {
+          res.status(200).json({ msg: 'OK' })
+        }
       })
     })
   })
