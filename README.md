@@ -7,6 +7,54 @@ Crea el apidoc de las rutas de un servicio web según el formato que establece A
 - Utiliza objetos con atributos Sequelize para indicar los datos de entrada (INPUT) y los datos de salida (OUTPUT).
 - Crear la documentación de los modelos de la base de datos en formato MD (MarkDown).
 
+## Propiedades INPUT y OUTPUT.
+
+``` js
+const input = {
+  query: FIELD,
+  headers: FIELD,
+  params: FIELD,
+  body: FIELD
+}
+
+const output = FIELD // Siempre será body
+```
+Las propiedades `input.query`, `input.headers` y `input.params` son objetos simples (sin niveles).
+Las propiedades `input.body` y `output`, pueden ser un simple objeto o una lista de objetos:
+``` js
+const output = { // Objeto
+  id: FIELD,
+  titulo: FIELD,
+  precio: FIELD
+}
+const output = [{ // Lista de objetos
+  id: FIELD,
+  titulo: FIELD,
+  precio: FIELD
+}]
+```
+las propiedades `input.body` y `output`, pueden incluir objetos anidados (asociaciones de los modelos):
+``` js
+const output = [{
+  id: FIELD,
+  titulo: FIELD,
+  precio: FIELD,
+  autor: {
+    id: FIELD,
+    nombre: FIELD,
+    usuario: {
+      id: FIELD,
+      username: FIELD,
+      password: FIELD,
+      roles: [{
+        id: FIELD,
+        nombre: FIELD
+      }]
+    }
+  }
+}]
+```
+
 # Instalación
 
 Para instalar sobre un proyecto, ejecutar el siguiente comando:
