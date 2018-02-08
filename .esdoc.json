@@ -15,14 +15,6 @@
           "title": "Insac Apidoc",
           "description": "Crea el apidoc de las rutas de un servicio web según el formato que establece ApidocJS.",
           "repository": "https://github.com/waquispe/insac-apidoc"
-        },
-        "manual": {
-          "index": "./manual/index.md",
-          "files": [
-            "./manual/overview.md",
-            "./manual/installation.md",
-            "./manual/tutorial.md"
-          ]
         }
       }
     }

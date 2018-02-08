@@ -1,11 +1,20 @@
 # Insac Apidoc
+
 Crea el apidoc de las rutas de un servicio web según el formato que establece ApidocJS.
 
 # Características
+
 - Utiliza objetos con atributos Sequelize para indicar los datos de entrada (INPUT) y los datos de salida (OUTPUT).
 - Crear la documentación de los modelos de la base de datos en formato MD (MarkDown).
 
-# Ejemplo 1. Modelos
+# Instalación
+
+Para instalar sobre un proyecto, ejecutar el siguiente comando:
+
+$ `sudo npm install --save insac-field`
+
+# Ejemplos
+## Ejemplo 1. Modelos
 
 Obtiene la información de un modelo Sequelize.
 
@@ -39,8 +48,8 @@ Representa a una obra literaria.
 */
 ```
 
-# Ejemplo 2. Rutas
-Crea un router para documentar las rutas
+## Ejemplo 2. Rutas
+Crea un router para documentar las rutas.
 
 ``` js
 const { Apidoc } = require('insac-apidoc')
@@ -50,7 +59,7 @@ const express = require('express')
 const container = new FieldContainer()
 container.define('libro', {
   id: Field.ID({ comment: 'ID del libro.' }),
-  titulo: Field.STRING({ comment: 'Título del libro.' }),
+  titulo: Field.STRING({ comment: 'Título del libro.', example: 'El gato negro' }),
   precio: Field.FLOAT({ comment: 'Precio del libro. [Bs]' })
 }, {
   comment: 'Representa a una obra literaria.'
@@ -72,7 +81,7 @@ function onCreate (route, apidoc) {
   * @apiParam (Input - body) {Float} precio Precio del libro. [Bs]
   * @apiParamExample {json} Ejemplo Petición: Todos los campos posibles
   * {
-  *   "titulo": "text",
+  *   "titulo": "El gato negro",
   *   "precio": 12.99
   * }
   * @apiSuccess (Output - body) {Integer} [id] ID del libro.
@@ -82,7 +91,7 @@ function onCreate (route, apidoc) {
   * HTTP/1.1 200 Ok
   * {
   *   "id": 1,
-  *   "titulo": "text",
+  *   "titulo": "El gato negro",
   *   "precio": 12.99
   * }
   */
