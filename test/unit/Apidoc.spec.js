@@ -1,16 +1,16 @@
 /* global describe it expect */
-const Apidoc = require('../../lib/class/Apidoc')
+const Apidoc    = require('../../lib/class/Apidoc')
 const Sequelize = require('sequelize')
-const express = require('express')
+const express   = require('express')
 
 const PARAMS = {
-  dialect: 'postgres',
-  lang: 'es',
-  logging: false,
-  define: {
-    underscored: true,
-    freezeTableName: true,
-    timestamps: false
+  dialect : 'postgres',
+  lang    : 'es',
+  logging : false,
+  define  : {
+    underscored     : true,
+    freezeTableName : true,
+    timestamps      : false
   },
   operatorsAliases: false
 }
@@ -21,9 +21,9 @@ describe('\n - Clase: Apidoc\n', () => {
     it('Ejecución con parámetros', () => {
       const sequelize = new Sequelize(null, null, null, PARAMS)
       LIBRO = sequelize.define('libro', {
-        id: { type: Sequelize.INTEGER(), comment: 'ID del libro.', primaryKey: true },
-        titulo: { type: Sequelize.STRING(), comment: 'Título del libro.', example: 'El gato negro' },
-        precio: { type: Sequelize.FLOAT(), comment: 'Precio del libro. [Bs]' }
+        id     : { type: Sequelize.INTEGER(), comment: 'ID del libro.', primaryKey: true },
+        titulo : { type: Sequelize.STRING(), comment: 'Título del libro.', example: 'El gato negro' },
+        precio : { type: Sequelize.FLOAT(), comment: 'Precio del libro. [Bs]' }
       }, {
         comment: 'Representa a una obra literaria.'
       })
@@ -45,19 +45,19 @@ describe('\n - Clase: Apidoc\n', () => {
       const router = Apidoc.router(onCreate)
 
       router.POST('/libros', {
-        description: 'Crea un libro.',
-        name: 'crearLibro',
-        group: 'Libro',
-        input: {
+        description : 'Crea un libro.',
+        name        : 'crearLibro',
+        group       : 'Libro',
+        input       : {
           body: {
-            titulo: LIBRO.attributes.titulo,
-            precio: LIBRO.attributes.precio
+            titulo : LIBRO.attributes.titulo,
+            precio : LIBRO.attributes.precio
           }
         },
         output: {
-          id: LIBRO.attributes.id,
-          titulo: LIBRO.attributes.titulo,
-          precio: LIBRO.attributes.precio
+          id     : LIBRO.attributes.id,
+          titulo : LIBRO.attributes.titulo,
+          precio : LIBRO.attributes.precio
         },
         controller: (req, res, next) => {
           res.status(200).json({ msg: 'OK' })

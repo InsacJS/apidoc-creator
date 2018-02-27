@@ -1,5 +1,5 @@
 {
-  "name": "insac-apidoc",
+  "name": "apidoc-creator",
   "version": "1.0.0",
   "description": "Crea el apidoc de las rutas de un servicio web según el formato que establece ApidocJS.",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/waquispe/insac-apidoc.git"
+    "url": "git+https://github.com/waquispe/apidoc-creator.git"
   },
   "keywords": [
     "insac",
@@ -21,9 +21,9 @@
   "author": "Wilmer Alex Quispe Quispe <q.wilmer.alex@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/waquispe/insac-apidoc/issues"
+    "url": "https://github.com/waquispe/apidoc-creator/issues"
   },
-  "homepage": "https://github.com/waquispe/insac-apidoc#readme",
+  "homepage": "https://github.com/waquispe/apidoc-creator#readme",
   "dependencies": {
     "lodash": "^4.17.5"
   },

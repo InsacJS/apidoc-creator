@@ -1,4 +1,4 @@
-# Insac Apidoc
+# Apidoc Creator
 
 Crea el apidoc de las rutas de un servicio web según el formato que establece ApidocJS.
 
@@ -59,7 +59,7 @@ const output = [{
 
 Para instalar sobre un proyecto, ejecutar el siguiente comando:
 
-$ `sudo npm install --save insac-apidoc`
+$ `sudo npm install --save apidoc-creator`
 
 # Ejemplos
 ## Ejemplo 1. Modelos
@@ -67,7 +67,7 @@ $ `sudo npm install --save insac-apidoc`
 Obtiene la información de un modelo Sequelize.
 
 ``` js
-const { Apidoc } = require('insac-apidoc')
+const { Apidoc } = require('apidoc-creator')
 
 const LIBRO = sequelize.define('libro', {
   id: { type: Sequelize.INTEGER(), comment: 'ID del libro.', primaryKey: true },
@@ -98,7 +98,7 @@ Representa a una obra literaria.
 Crea un router para documentar las rutas.
 
 ``` js
-const { Apidoc } = require('insac-apidoc')
+const { Apidoc } = require('apidoc-creator')
 
 function onCreate (route, apidoc) {
   console.log(apidoc)

@@ -1,1 +1,1 @@
-module.exports = require('./lib/insac-apidoc')
+module.exports = require('./lib/apidoc-creator')
