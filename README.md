@@ -11,10 +11,10 @@ Crea el apidoc de las rutas de un servicio web según el formato que establece A
 
 ``` js
 const input = {
-  query: FIELD,
-  headers: FIELD,
-  params: FIELD,
-  body: FIELD
+  query   : FIELD,
+  headers : FIELD,
+  params  : FIELD,
+  body    : FIELD
 }
 
 const output = FIELD // Siempre será body
@@ -23,32 +23,32 @@ Las propiedades `input.query`, `input.headers` y `input.params` son objetos simp
 Las propiedades `input.body` y `output`, pueden ser un simple objeto o una lista de objetos:
 ``` js
 const output = { // Objeto
-  id: FIELD,
-  titulo: FIELD,
-  precio: FIELD
+  id     : FIELD,
+  titulo : FIELD,
+  precio : FIELD
 }
 const output = [{ // Lista de objetos
-  id: FIELD,
-  titulo: FIELD,
-  precio: FIELD
+  id     : FIELD,
+  titulo : FIELD,
+  precio : FIELD
 }]
 ```
 las propiedades `input.body` y `output`, pueden incluir objetos anidados (asociaciones de los modelos):
 ``` js
 const output = [{
-  id: FIELD,
-  titulo: FIELD,
-  precio: FIELD,
-  autor: {
-    id: FIELD,
-    nombre: FIELD,
-    usuario: {
-      id: FIELD,
-      username: FIELD,
-      password: FIELD,
-      roles: [{
-        id: FIELD,
-        nombre: FIELD
+  id     : FIELD,
+  titulo : FIELD,
+  precio : FIELD,
+  autor  : {
+    id      : FIELD,
+    nombre  : FIELD,
+    usuario : {
+      id       : FIELD,
+      username : FIELD,
+      password : FIELD,
+      roles    : [{
+        id     : FIELD,
+        nombre : FIELD
       }]
     }
   }
@@ -70,9 +70,9 @@ Obtiene la información de un modelo Sequelize.
 const { Apidoc } = require('apidoc-creator')
 
 const LIBRO = sequelize.define('libro', {
-  id: { type: Sequelize.INTEGER(), comment: 'ID del libro.', primaryKey: true },
-  titulo: { type: Sequelize.STRING(), comment: 'Título del libro.', example: 'El gato negro' },
-  precio: { type: Sequelize.FLOAT(), comment: 'Precio del libro. [Bs]' }
+  id     : { type: Sequelize.INTEGER(), comment: 'ID del libro.', primaryKey: true },
+  titulo : { type: Sequelize.STRING(), comment: 'Título del libro.', example: 'El gato negro' },
+  precio : { type: Sequelize.FLOAT(), comment: 'Precio del libro. [Bs]' }
 }, {
   comment: 'Representa a una obra literaria.'
 })
