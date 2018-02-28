@@ -61,7 +61,7 @@ const output = [{
 
 Para instalar sobre un proyecto, ejecutar el siguiente comando:
 
-$ `sudo npm install --save apidoc-creator`
+$ `npm install --save apidoc-creator`
 
 # Ejemplos
 ## Ejemplo 1. Modelos
