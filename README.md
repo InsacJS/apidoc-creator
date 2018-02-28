@@ -55,6 +55,8 @@ const output = [{
 }]
 ```
 
+**Nota.-** Para crear los objetos `input` y `output`, se recomienda utilizar la librería [field-creator](https://github.com/waquispe/field-creator).
+
 # Instalación
 
 Para instalar sobre un proyecto, ejecutar el siguiente comando:
