@@ -1,6 +1,6 @@
 {
   "name": "apidoc-creator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Crea el apidoc de las rutas de un servicio web según el formato que establece ApidocJS.",
   "main": "index.js",
   "scripts": {
