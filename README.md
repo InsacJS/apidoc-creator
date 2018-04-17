@@ -1,6 +1,6 @@
 # Apidoc Creator
 
-Crea el apidoc de las rutas de un servicio web según el formato que establece ApidocJS.
+Crea el apidoc de las rutas de un servicio web según el formato que establece ApidocJS, utilizando los atributos de los modelos sequelize.
 
 # Características
 
