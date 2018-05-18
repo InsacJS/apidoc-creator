@@ -14,7 +14,7 @@
         "brand": {
           "title": "Apidoc Creator",
           "description": "Crea el apidoc de las rutas de un servicio web según el formato que establece ApidocJS.",
-          "repository": "https://github.com/waquispe/apidoc-creator"
+          "repository": "https://github.com/insacjs/apidoc-creator"
         }
       }
     }

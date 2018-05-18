@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/waquispe/apidoc-creator.git"
+    "url": "git+https://github.com/insacjs/apidoc-creator.git"
   },
   "keywords": [
     "insac",
@@ -22,9 +22,9 @@
   "author": "Wilmer Alex Quispe Quispe <q.wilmer.alex@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/waquispe/apidoc-creator/issues"
+    "url": "https://github.com/insacjs/apidoc-creator/issues"
   },
-  "homepage": "https://github.com/waquispe/apidoc-creator#readme",
+  "homepage": "https://github.com/insacjs/apidoc-creator#readme",
   "dependencies": {
     "lodash": "^4.17.5"
   },
