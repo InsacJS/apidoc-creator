@@ -40,7 +40,7 @@ const INPUT = {
 const OUTPUT = FIELD // Siempre sera body
 ```
 
-Para crear los objetos `input` y `output`, se recomienda utilizar la librería [field-creator](https://github.com/waquispe/field-creator).
+Para crear los objetos `input` y `output`, se recomienda utilizar la librería [field-creator](https://github.com/insacjs/field-creator).
 
 ## Función `onCreate`
 
