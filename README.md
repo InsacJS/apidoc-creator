@@ -92,9 +92,9 @@ Representa a una obra literaria.
 | Atributo           | Tipo de dato                           | Descripción                    |
 |--------------------|----------------------------------------|--------------------------------|
 | `id` [ PK ]        | `Integer`                              | ID del libro.                  |
-| `titulo`           | `String{de 1 a 255 caracteres}`        | Título del libro.              |
+| `titulo`           | `String`                               | Título del libro.              |
 | `precio`           | `Float`                                | Precio del libro. [Bs]         |
-| `estado`           | `String=ACTIVO,INACTIVO`               | Estado del registro.           |
+| `estado`           | `Enum=ACTIVO,INACTIVO`                 | Estado del registro.           |
 
 */
 ```
@@ -104,7 +104,7 @@ Representa a una obra literaria.
 ``` js
 const { Apidoc }      = require('apidoc-creator')
 const { Field, THIS } = require('field-creator')
-const express = require('express')
+const express         = require('express')
 
 const app = express()
 
@@ -118,19 +118,19 @@ function onCreate (route) {
   * @apiGroup Libro
   * @apiDescription Crea un libro.
   * @apiVersion 1.0.0
-  * @apiParam (Input - body) {String{de 1 a 255 caracteres}} titulo Título del libro.
-  * @apiParam (Input - body) {Float} precio Precio del libro. [Bs]
-  * @apiParam (Input - body) {String=ACTIVO,INACTIVO} estado Estado del registro.
+  * @apiParam (Input - body) {String} titulo Título del libro. <br><strong>len: </strong><code>0,255</code>
+  * @apiParam (Input - body) {Float} precio Precio del libro. [Bs] <br><strong>isFloat: </strong><code>true</code>, ...
+  * @apiParam (Input - body) {Enum} estado Estado del registro. <br><strong>isIn: </strong><code>ACTIVO,INACTIVO</code>
   * @apiParamExample {json} Ejemplo Petición
   * {
   *   "titulo": "El gato negro",
   *   "precio": 12.99,
   *   "estado": "ACTIVO"
   * }
-  * @apiSuccess (Output - body) {Integer} [id] ID del libro.
-  * @apiSuccess (Output - body) {String} [titulo] Título del libro.
-  * @apiSuccess (Output - body) {Float} [precio] Precio del libro. [Bs]
-  * @apiSuccess (Output - body) {String} [estado] Estado del registro.
+  * @apiSuccess (Output - body) {Integer} [id] ID del libro. <br><strong>isInt: </strong><code>true</code>, ...
+  * @apiSuccess (Output - body) {String} [titulo] Título del libro. <br><strong>len: </strong><code>0,255</code>
+  * @apiSuccess (Output - body) {Float} [precio] Precio del libro. [Bs] <br><strong>isFloat: </strong><code>true</code>, ...
+  * @apiSuccess (Output - body) {Enum} [estado] Estado del registro. <br><strong>isIn: </strong><code>ACTIVO,INACTIVO</code>
   * @apiSuccessExample {json} Respuesta Exitosa: 200 Ok
   * HTTP/1.1 200 Ok
   * {
