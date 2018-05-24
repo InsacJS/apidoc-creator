@@ -127,10 +127,10 @@ function onCreate (route) {
   *   "precio": 12.99,
   *   "estado": "ACTIVO"
   * }
-  * @apiSuccess (Output - body) {Integer} [id] ID del libro. <br><strong>isInt: </strong><code>true</code>, ...
-  * @apiSuccess (Output - body) {String} [titulo] Título del libro. <br><strong>len: </strong><code>0,255</code>
-  * @apiSuccess (Output - body) {Float} [precio] Precio del libro. [Bs] <br><strong>isFloat: </strong><code>true</code>, ...
-  * @apiSuccess (Output - body) {Enum} [estado] Estado del registro. <br><strong>isIn: </strong><code>ACTIVO,INACTIVO</code>
+  * @apiSuccess (Output - body) {Integer} [id] ID del libro.
+  * @apiSuccess (Output - body) {String} [titulo] Título del libro.
+  * @apiSuccess (Output - body) {Float} [precio] Precio del libro. [Bs]
+  * @apiSuccess (Output - body) {Enum} [estado] Estado del registro.
   * @apiSuccessExample {json} Respuesta Exitosa: 200 Ok
   * HTTP/1.1 200 Ok
   * {
