@@ -26,6 +26,7 @@ Apidoc Creator utiliza ApidocJS para crear la documentación y ofrece un sistema
 | `inputExamples`  | Ejemplos de datos de entrada.                            |
 | `outputExamples` | Ejemplos de datos de salida.                             |
 | `permissions`    | Lista de todos los roles que pueden acceder al recurso.  |
+| `sampleRequest`  | Dirección URL de la ruta para probar una petición.       |
 
 ## Propiedades `input` y `output`
 
@@ -118,19 +119,19 @@ function onCreate (route) {
   * @apiGroup Libro
   * @apiDescription Crea un libro.
   * @apiVersion 1.0.0
-  * @apiParam (Input - body) {String} titulo Título del libro. <br><strong>len: </strong><code>0,255</code>
-  * @apiParam (Input - body) {Float} precio Precio del libro. [Bs] <br><strong>isFloat: </strong><code>true</code>, ...
-  * @apiParam (Input - body) {Enum} estado Estado del registro. <br><strong>isIn: </strong><code>ACTIVO,INACTIVO</code>
+  * @apiParam (Datos de entrada - body) {String} titulo Título del libro. <br><strong>len: </strong><code>0,255</code>
+  * @apiParam (Datos de entrada - body) {Float} precio Precio del libro. [Bs] <br><strong>isFloat: </strong><code>true</code>, <strong>min: </strong><code>0</code>, <strong>max: </strong><code>1e+308</code>
+  * @apiParam (Datos de entrada - body) {Enum} estado Estado del registro. <br><strong>isIn: </strong><code>ACTIVO,INACTIVO</code>
   * @apiParamExample {json} Ejemplo Petición
   * {
   *   "titulo": "El gato negro",
   *   "precio": 12.99,
   *   "estado": "ACTIVO"
   * }
-  * @apiSuccess (Output - body) {Integer} [id] ID del libro.
-  * @apiSuccess (Output - body) {String} [titulo] Título del libro.
-  * @apiSuccess (Output - body) {Float} [precio] Precio del libro. [Bs]
-  * @apiSuccess (Output - body) {Enum} [estado] Estado del registro.
+  * @apiSuccess (Respuesta - body) {Integer} [id] ID del libro.
+  * @apiSuccess (Respuesta - body) {String} [titulo] Título del libro.
+  * @apiSuccess (Respuesta - body) {Float} [precio] Precio del libro. [Bs]
+  * @apiSuccess (Respuesta - body) {Enum} [estado] Estado del registro.
   * @apiSuccessExample {json} Respuesta Exitosa: 200 Ok
   * HTTP/1.1 200 Ok
   * {
